@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promedio con While</title>
+</head>
+<body>
+  <script>
+    let suma = 0;
+    let cantidad = 0;
+    let numero = parseFloat(prompt("Ingresa un número (o -1 para terminar):"));
+
+    while (numero !== -1) {
+      if (!isNaN(numero)) {
+        suma += numero;
+        cantidad++;
+      }
+      numero = parseFloat(prompt("Ingresa otro número (o -1 para terminar):"));
+    }
+
+    if (cantidad > 0) {
+      let promedio = suma / cantidad;
+      alert("El promedio es: " + promedio.toFixed(2));
+    } else {
+      alert("No se ingresaron números válidos.");
+    }
+  </script>
+</body>
+</html>

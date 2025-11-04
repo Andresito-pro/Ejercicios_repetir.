@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar números menores de 50</title>
+</head>
+<body>
+    <h2>Ingresa números (el programa se detiene cuando ingreses uno mayor o igual a 50)</h2>
+    <input type="number" id="ingreso" placeholder="Escribe un número">
+    <button type="button" id="verificar" onclick="sumarMenores()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function sumarMenores() {
+            let suma = 0;
+            let numero;
+            
+            do {
+                numero = parseInt(document.getElementById("ingreso").value);
+
+                if (numero < 50) {
+                    suma += numero;
+                    document.getElementById("resultado").innerHTML = 
+                        "Llevas sumado: " + suma;
+                } else {
+                    document.getElementById("resultado").innerHTML = 
+                        "Número mayor o igual a 50 ingresado.<br>La suma total fue: " + suma;
+                }
+
+                
+                document.getElementById("ingreso").value = "";
+                break;
+            } while (numero < 50);
+        }
+    </script>
+</body>
+</html>

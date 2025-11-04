@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Pares con While</title>
+</head>
+<body>
+  <h2>Números pares del 2 al 20:</h2>
+  <ul id="lista-pares"></ul>
+
+  <script>
+    let i = 2;
+    const lista = document.getElementById("lista-pares");
+
+    while (i <= 20) {
+      if (i % 2 === 0) {
+        const item = document.createElement("li");
+        item.textContent = i;
+        lista.appendChild(item);
+      }
+      i++;
+    }
+  </script>
+</body>
+</html>

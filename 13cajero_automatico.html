@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automatico</title>
+</head>
+<body>
+    <h2>El saldo a retirar es de 1'450'000</h2>
+    <input type="number", id="ingreso", placeholder="Ingrese la cantidad que va a retirar">
+    <button type="button", id="retirar", onclick="mostrarSaldo()">retirar</button>
+    <p id="resultado"></p>
+
+    <script>
+
+        function mostrarSaldo() {
+            let ingreso = parseInt(document.getElementById("ingreso").value);
+            let saldo = 1450000
+            let resta = 0
+            if (ingreso <= saldo) {
+                resta = saldo - ingreso
+                document.getElementById("resultado").innerHTML = 
+                "Queda en tu cuenta: "+resta
+
+            } else{
+                document.getElementById("resultado").innerHTML = 
+                "El ingreso es mayor al saldo"+resta
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

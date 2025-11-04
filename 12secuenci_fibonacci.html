@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secuencia Fibonacci</title>
+</head>
+<body>
+    <h2>Ingrese un número de la secuencia de Fibonacci (menor a 377)</h2>
+    
+    <input type="number" placeholder="Ingrese su número" id="ingreso">
+    <button type="button" id="verificar" onclick="mostrarNumeros()">Verificar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarNumeros() {
+            let ingreso = parseInt(document.getElementById("ingreso").value);
+            let fibonacci = [0, 1];
+            let siguiente = 0;
+
+            if (ingreso < 377) {
+
+                while (true) {
+                    siguiente = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+                    if (siguiente > ingreso) break;
+                    fibonacci.push(siguiente);
+                }
+
+                document.getElementById("resultado").innerHTML = 
+                    "La secuencia de Fibonacci hasta " + ingreso + " es:<br>" + fibonacci.join(", ");
+            } else {
+                document.getElementById("resultado").innerHTML = 
+                    "El número ingresado es mayor a 377.";
+            }
+        }
+    </script>
+</body>
+</html>
